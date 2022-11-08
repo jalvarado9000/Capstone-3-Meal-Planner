@@ -1,0 +1,668 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Elegant Chicken in Sour Cream",
+      "prepTime": {
+        "prepHrs": "0",
+        "prepMins": "30"
+      },
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "15"
+      },
+      "ingredients": [
+        {
+          "id": "1",
+          "note": "2 oz Freeze-Dried chicken"
+        },
+        {
+          "id": "2",
+          "note": "4 Chicken Bouillon Cube"
+        },
+        {
+          "id": "3",
+          "note": "1 ts Dill Weed"
+        },
+        {
+          "id": "4",
+          "note": "1 Env Cream Of Onion Soup Mix"
+        },
+        {
+          "id": "5",
+          "note": "8 oz Sour Cream Mix"
+        },
+        {
+          "id": "6",
+          "note": "8 oz Pasta, Enriched"
+        },
+        {
+          "id": "7",
+          "note": "1/2 c Sliced Almonds"
+        },
+        {
+          "id": "8",
+          "note": "2 oz Freeze-Dried Peas"
+        },
+        {
+          "id": "9",
+          "note": "8 c Water"
+        }
+      ],
+      "servings": "4 Servings",
+      "instructions": "1. Bring 7 cups of water to boiling, add pasta-chicken package, and simmer for 10 minutes, stirring occasionally. Add peas, at the end, for the amount of time recommended on their package. 2. Mix soup mix with 1/2 cup of water. Pour into pot while stirring, and simmer 5-10 minutes more, or until pasta and chicken are tender. 3. Reconstitute sour cream mix with cold water, stir into the pot. Serve sprinkled with almonds on top. Makes about 8 cups."
+    },
+    {
+      "id": "2",
+      "title": "Elegant Chicken Salad",
+      "prepTime": {
+        "prepHrs": "0",
+        "prepMins": "30"
+      },
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "15"
+      },
+      "ingredients": [
+        {
+          "id": "1",
+          "note": "1/4 c Olive oil"
+        },
+        {
+          "id": "2",
+          "note": "2 Chicken breasts"
+        },
+        {
+          "id": "3",
+          "note": "3 c Chicken broth or water"
+        },
+        {
+          "id": "4",
+          "note": "1/4 c Balsamic vinegar"
+        },
+        {
+          "id": "5",
+          "note": "2 tb Orange juice"
+        },
+        {
+          "id": "6",
+          "note": "1 tb Dijon mustard"
+        },
+        {
+          "id": "7",
+          "note": "1/4 c Chives"
+        },
+        {
+          "id": "8",
+          "note": "2 tb Tarragon; chopped"
+        },
+        {
+          "id": "9",
+          "note": "Salt and pepper"
+        },
+        {
+          "id": "10",
+          "note": "3 c Rice (wild or white)"
+        }
+      ],
+      "servings": "6 Servings",
+      "instructions": "Poach chicken in broth or water for about 20 minutes. In salad bowl combine vinegar, juice, and mustard. Gradually whisk in oil. Stir in chives and tarragon and season with salt and pepper. Cut chicken into bite sized pieces. Add chicken and rice to dressing. Toss well."
+    },
+    {
+      "id": "3",
+      "title": "Elegant Rice and Chicken",
+      "prepTime": {
+        "prepHrs": "0",
+        "prepMins": "30"
+      },
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "15"
+      },
+      "ingredients": [
+        {
+          "id": "1",
+          "note": "2 c Water"
+        },
+        {
+          "id": "2",
+          "note": "1 Envelope dry onion soup mix"
+        },
+        {
+          "id": "3",
+          "note": "6 Chicken breasts - boneless & skinless"
+        },
+        {
+          "id": "4",
+          "note": "Flour"
+        },
+        {
+          "id": "5",
+          "note": "Salt"
+        },
+        {
+          "id": "6",
+          "note": "Paprika"
+        },
+        {
+          "id": "7",
+          "note": "1 cn Cream of mushroom soup"
+        },
+        {
+          "id": "8",
+          "note": "1/2 lb Fresh mushrooms"
+        },
+        {
+          "id": "9",
+          "note": "1 tb Butter"
+        }
+      ],
+      "servings": "1 Servings",
+      "instructions": "Bring water to boil, stir in the dry onion soup mix & then add rice. Turn off heat & let stand. Meanwhile, shake chicken in enough flour, salt & paprika to coat. Fry until golden brown. Put cooked rice mixture in large casserole. Arrange cooked chicken breasts on top. Coverf with the mushroom soup. Top with the mushrooms that have been sauteed in the 1 tablespoon butter. Dust with paprika. Bake uncovered in 350 degree oven for 30 minutes until thoroughly heated."
+    },
+    {
+      "id": "4",
+      "title": "Emeril's Cheesy Chicken Shortcake",
+      "prepTime": {
+        "prepHrs": "0",
+        "prepMins": "30"
+      },
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "15"
+      },
+      "ingredients": [
+        {
+          "id": "9",
+          "note": "2 tb Butter"
+        },
+        {
+          "id": "9",
+          "note": "1 lb Chicken breast; skinless, boneless and small diced"
+        },
+        {
+          "id": "9",
+          "note": "1 c Minced onions"
+        },
+        {
+          "id": "9",
+          "note": "1 lb Smoked sausage cut into 1/4-inch slices"
+        },
+        {
+          "id": "9",
+          "note": "Salt"
+        },
+        {
+          "id": "9",
+          "note": "Freshly ground black pepper"
+        },
+        {
+          "id": "9",
+          "note": "1 tb Chopped garlic"
+        },
+        {
+          "id": "9",
+          "note": "2 c Heavy cream"
+        },
+        {
+          "id": "9",
+          "note": "1 ds Worcestershire Sauce"
+        },
+        {
+          "id": "9",
+          "note": "1 ds Crystal Hot Sauce"
+        },
+        {
+          "id": "9",
+          "note": "1/4 c Chopped green onions"
+        },
+        {
+          "id": "9",
+          "note": "8 Cheesy Biscuits"
+        },
+        {
+          "id": "9",
+          "note": "1/2 c Grated Parmesan Reggiano cheese"
+        }
+      ],
+      "servings": "8 Servings",
+      "instructions": "In a large saut pan, melt one tablespoon of the butter. Season the chicken with Essence. Add the chicken to the melted butter and quickly saut for 2 minutes. Add the remaining butter and melt. Add the onions. Season with salt and pepper. Saut the onions for 2 minutes. Add the sausage and continue to saut for 2 minutes. Add the garlic and cream. Season the mixture with salt, pepper, Worcestershire Sauce and hot sauce. Bring the liquid to a boil and reduce to a simmer. Simmer the mixture for 4 to 6 minutes, stirring occasionally. Add the green onions. To serve, slice the biscuits in half and spoon the chicken mixture over the top. Garnish with parsley and cheese. NOTES : Air date 3/6/98"
+    },
+    {
+      "id": "5",
+      "title": "Emerilized Chicken Cordon Bleu",
+      "prepTime": {
+        "prepHrs": "0",
+        "prepMins": "30"
+      },
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "15"
+      },
+      "ingredients": [
+        {
+          "id": "1",
+          "note": "2 6-ounce chicken breasts cut in half and pounded into thin scallops"
+        },
+        {
+          "id": "2",
+          "note": "8 Thin slices of prosciutto|8 Thin slices of Desoto Cheese; (2 inches by 2 inches by 1/4 inch)"
+        },
+        {
+          "id": "3",
+          "note": "1 c Flour"
+        },
+        {
+          "id": "4",
+          "note": "2 Eggs; slightly beaten with 2 tablespoons milk"
+        },
+        {
+          "id": "5",
+          "note": "1 c Herbed bread crumbs|Oil for sauteeing"
+        },
+        {
+          "id": "6",
+          "note": "Salt and pepper"
+        },
+        {
+          "id": "7",
+          "note": "1 c Smoked tomato butter sauce; hot, recipe follows"
+        },
+        {
+          "id": "8",
+          "note": "2 c Mashed potatoes; hot|2 tb Chiffonade of basil"
+        },
+        {
+          "id": "9",
+          "note": "2 tb Grated St. John's Cheese|Essence"
+        }
+      ],
+      "servings": "1 Servings",
+      "instructions": "For the chicken: Season each side of the chicken scallops with salt and pepper. Lay on scallop flat and layer 2 pieces of the prosciutto, 2 pieces of the Desoto cheese and top with a meat scallop. Carefully dredge the chicken in flour. Dip the chicken in the egg mixture, letting any excess drip off. Finally dredge the chicken in the herb crumbs, coating each side completely. In a saute pan, heat the olive oil. When the pan is smoking hot, add the chicken. Saute for 2 to 3 minutes on each side or until golden brown. Remove from the pan and drain on a paper-lined plate. Season with Essence. Spoon the smoked tomato butter sauce in the center and around the edges of the plate. Mound the potatoes in the center of the sauce. Lay the chicken across the potatoes. Garnish with the basil, grated cheese and Essence. Yield: 2 servings"
+    },
+    {
+      "id": "6",
+      "title": "Enchilada Sauce/chicken Enchiladas",
+      "prepTime": {
+        "prepHrs": "0",
+        "prepMins": "30"
+      },
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "15"
+      },
+      "ingredients": [
+        {
+          "id": "9",
+          "note": "1 tb Flour"
+        },
+        {
+          "id": "9",
+          "note": "1 1/2 tb Olive oil"
+        },
+        {
+          "id": "9",
+          "note": "1/2 ts Thyme"
+        },
+        {
+          "id": "9",
+          "note": "1/2 ts Oregano"
+        },
+        {
+          "id": "9",
+          "note": "1/4 ts Cayenne"
+        },
+        {
+          "id": "9",
+          "note": "1/2 ts Cumin"
+        },
+        {
+          "id": "9",
+          "note": "1 Clove garlic; minced"
+        },
+        {
+          "id": "9",
+          "note": "1 cn Chicken broth; 14 oz"
+        },
+        {
+          "id": "9",
+          "note": "1 cn Tomatoe sauce; 8 oz"
+        },
+        {
+          "id": "9",
+          "note": "1 tb Lime juice; fresh"
+        }
+      ],
+      "servings": "1 Servings",
+      "instructions": "In large pan saute flour in oil for one minute, add spices and cook for an additional minute. Add broth, tomatoe sauce and lime juice and bring to a boil stirring constantly till thickened. Assemble tortillas with chicken and cooked onion, laying side by side in pan that has been coated with sauce. When pan is full, pour additional sauce over top, add grated cheddar cheese. Bake in oven til warmed through and cheese has melted. Serve on a bed of lettuce and serve with sour cream, salsa and jalapeno peppers to the side."
+    },
+    {
+      "id": "7",
+      "title": "Enchiladas De Pollo (Chicken Enchiladas)",
+      "prepTime": {
+        "prepHrs": "0",
+        "prepMins": "30"
+      },
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "15"
+      },
+      "ingredients": [
+        {
+          "id": "9",
+          "note": "1 cn (16-ounce) tomatoes"
+        },
+        {
+          "id": "9",
+          "note": "1 cn (4-ounce) green chili peppers, rinsed and seeded"
+        },
+        {
+          "id": "9",
+          "note": "1/2 ts Coriander seed"
+        },
+        {
+          "id": "9",
+          "note": "1/2 ts Salt"
+        },
+        {
+          "id": "9",
+          "note": "1 c Dairy sour cream"
+        },
+        {
+          "id": "9",
+          "note": "2 c Finely chopped cooked chicken or turkey"
+        },
+        {
+          "id": "9",
+          "note": "1 pk (3-ounce) cream cheese, softened"
+        },
+        {
+          "id": "9",
+          "note": "1/4 c Finely chopped onion"
+        },
+        {
+          "id": "9",
+          "note": "3/4 ts Salt"
+        },
+        {
+          "id": "9",
+          "note": "2 tb Cooking oil"
+        },
+        {
+          "id": "9",
+          "note": "12 6-inch tortillas"
+        },
+        {
+          "id": "9",
+          "note": "1 c Shredded omterey jack cheese (4 ounces)"
+        }
+      ],
+      "servings": "1 Servings",
+      "instructions": "Place undrained tomatoes, chili peppers, coriander seed, and the 1/2 teaspoon salt in blender container. Cover; blend till mixture is smooth. Add sour cream; cover and blend just till combined. Set aside. Combine chicken or turkey, cream cheese, onion, and 3/4 teaspoon salt. In skillet heat cooking oil. Dip tortillas, one at a time, into hot oil for 10 seconds or just till limp. Drain on paper toweling. Spoon chicken mixture on tortillas; roll up. Place seam side down in 12x7 1/2 x2-inch baking dish. Pour tomato mixture atop. cover with foil; bake in 350 degree oven about 30 minutes or till heated through. Remove foil; sprinkle with shredded cheese. Return to oven till cheese melts. Makes 6 servings."
+    },
+    {
+      "id": "8",
+      "title": "Enchiladas De Pollo Y Queso (Chicken Enchilada Casserole)",
+      "prepTime": {
+        "prepHrs": "0",
+        "prepMins": "30"
+      },
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "15"
+      },
+      "ingredients": [
+        {
+          "id": "9",
+          "note": "1 c Chopped onion"
+        },
+        {
+          "id": "9",
+          "note": "1/2 c Chopped green bell pepper"
+        },
+        {
+          "id": "9",
+          "note": "2 tb Butter or margarine"
+        },
+        {
+          "id": "9",
+          "note": "2 c Chopped cooked chicken or turkey"
+        },
+        {
+          "id": "9",
+          "note": "1 cn (4-ounce) green chili peppers, rinsed, seeded, and chopped"
+        },
+        {
+          "id": "9",
+          "note": "3 tb Butter or margarine"
+        },
+        {
+          "id": "9",
+          "note": "1/4 c All-purpose flour"
+        },
+        {
+          "id": "9",
+          "note": "1 ts Ground coriander seed"
+        },
+        {
+          "id": "9",
+          "note": "3/4 ts Salt"
+        },
+        {
+          "id": "9",
+          "note": "2 1/2 c Chicken broth"
+        },
+        {
+          "id": "9",
+          "note": "1 c Dairy sour cream"
+        },
+        {
+          "id": "9",
+          "note": "1 1/2 c Shredded monterey jack cheese (6 ounces)"
+        },
+        {
+          "id": "9",
+          "note": "12 6-inch tortillas"
+        }
+      ],
+      "servings": "1 Servings",
+      "instructions": "from Better Homes & Garden Mexican Cooking In large saucepan cook onion and green pepper in the 2 tablespoons butter or margarine till tender. Combine in a bowl with chopped chicken and green chili peppers; set aside. In same saucepan melt the 3 tablespoons butter or margarine. Blend in flour, coriander, and salt. Stir in chicken broth all at once; cook and stir till thickened and bubbly. Remove from heat; stir in sour cream and 1/2 cup of cheese. Stir 1/2 cup of the sauce into the shicken. Dip each tortilla into remaining hot sauce to soften; fill each with about 1/4 cup of the chicken mixture. Roll up. Arrange rolls in a 13x9x2-inch baking dish; pour remaining sauce over. Sprinkle with remaining cheese. Bake, uncovered, in 350 degree oven about 25 minutes or till bubbly. serves 6."
+    },
+    {
+      "id": "9",
+      "title": "Fresh Vegetable and Chicken Stew",
+      "prepTime": {
+        "prepHrs": "0",
+        "prepMins": "30"
+      },
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "15"
+      },
+      "ingredients": [
+        {
+          "id": "9",
+          "note": "1 (4-5 pound) chicken (up to)"
+        },
+        {
+          "id": "9",
+          "note": "3 tb Shortening"
+        },
+        {
+          "id": "9",
+          "note": "2 c Hot water"
+        },
+        {
+          "id": "9",
+          "note": "1 tb Salt"
+        },
+        {
+          "id": "9",
+          "note": "3/4 ts Black pepper"
+        },
+        {
+          "id": "9",
+          "note": "12 sm White onions"
+        },
+        {
+          "id": "9",
+          "note": "1 c Sliced carrots"
+        },
+        {
+          "id": "9",
+          "note": "1 c Fresh peas; lima beans, or snapbeans"
+        },
+        {
+          "id": "9",
+          "note": "1 c Diced potatoes"
+        },
+        {
+          "id": "9",
+          "note": "1/3 c All-purpose flour"
+        },
+        {
+          "id": "9",
+          "note": "1/2 c Water"
+        }
+      ],
+      "servings": "6 Servings",
+      "instructions": "Cut chicken into serving-size pieces and brown on all sides in hot shortening. Place in Dutch oven or saucepan with water, salt, and pepper. Cover and cook for 1 hour, or until chicken is tender. Add vegetables about 30 minutes before cooking time is up. Combine flour with the 1/2 cup water and stir into stew. Cook until medium thickness. Yield: 6 servings."
+    },
+    {
+      "title": "fish taco",
+      "ingredients": [
+        {
+          "id": 7602,
+          "note": "fish"
+        },
+        {
+          "id": 8404,
+          "note": "onion"
+        },
+        {
+          "id": 5379,
+          "note": "cilantro"
+        },
+        {
+          "id": 3977,
+          "note": "tortilla"
+        }
+      ],
+      "instructions": "go to taco stand",
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "15"
+      },
+      "prepTime": {
+        "prepHrs": "",
+        "prepMins": "45"
+      },
+      "id": "yeH3LoZ"
+    },
+    {
+      "title": "vegetarian tacos",
+      "ingredients": [
+        {
+          "id": 7987,
+          "note": "mushrooms"
+        },
+        {
+          "id": 1506,
+          "note": "cilantro"
+        },
+        {
+          "id": 5970,
+          "note": "tortilla"
+        }
+      ],
+      "instructions": "go to taco stand",
+      "cookTime": {
+        "cookHrs": "1",
+        "cookMins": "5"
+      },
+      "prepTime": {
+        "prepHrs": "",
+        "prepMins": "20"
+      },
+      "id": "iHHK7oz"
+    },
+    {
+      "title": "",
+      "ingredients": [
+        {
+          "id": 6697,
+          "note": "steak"
+        },
+        {
+          "id": 2170,
+          "note": "chicken"
+        },
+        {
+          "id": 6930,
+          "note": "onions"
+        },
+        {
+          "id": 9179,
+          "note": "tomato"
+        },
+        {
+          "id": 5952,
+          "note": "cilantro"
+        },
+        {
+          "id": 6935,
+          "note": "garlic"
+        },
+        {
+          "id": 4247,
+          "note": "chicken broth"
+        },
+        {
+          "id": 7632,
+          "note": "shrimp"
+        },
+        {
+          "id": 22,
+          "note": "salsa"
+        },
+        {
+          "id": 1689,
+          "note": "pico de gallo"
+        }
+      ],
+      "instructions": "",
+      "cookTime": {
+        "cookHrs": "",
+        "cookMins": ""
+      },
+      "prepTime": {
+        "prepHrs": "",
+        "prepMins": ""
+      },
+      "id": "lhK2PsJ"
+    },
+    {
+      "title": "cereal",
+      "ingredients": [
+        {
+          "id": 2865,
+          "note": "cereal"
+        },
+        {
+          "id": 1726,
+          "note": "milk"
+        }
+      ],
+      "instructions": "turn on some cartoons\n",
+      "cookTime": {
+        "cookHrs": "",
+        "cookMins": "5"
+      },
+      "prepTime": {
+        "prepHrs": "",
+        "prepMins": ""
+      },
+      "id": "G6odLJd"
+    }
+  ]
+}

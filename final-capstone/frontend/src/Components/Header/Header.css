@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    padding: 0px;
+    /* background: linear-gradient(90deg, #284839 1.18%, #82a273 100%); */
+    /* color: white; */
+    /* padding: 20px; */
+}
+
+.header-image {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 200%;
+    margin-right: 6px;
+}

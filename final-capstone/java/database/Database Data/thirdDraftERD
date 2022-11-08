@@ -1,0 +1,422 @@
+BEGIN;
+
+CREATE TYPE public.alteration_level AS ENUM
+('unchanged', 'minor', 'major');
+
+ALTER TYPE public.alteration_level
+OWNER TO postgres;
+
+CREATE TYPE public.ingredient_types AS ENUM
+('grain', 'dairy', 'fruit', 'herbs_spices_flavors', 'vegetable', 'pasta', 'meat', 'fish', 'oil_or_fat', 'acid', 'sweetener', 'egg', 'starch', 'liquid', 'alcohol', 'baking', 'Other');
+
+ALTER TYPE public.ingredient_types
+OWNER TO postgres;
+
+CREATE TYPE public.measurement_types AS ENUM
+('volume_ml', 'weight_g', 'empty');
+
+ALTER TYPE public.measurement_types
+OWNER TO postgres;
+
+CREATE SEQUENCE seq_user_id
+INCREMENT BY 1
+NO MAXVALUE
+NO MINVALUE
+CACHE 1;
+
+
+CREATE TABLE IF NOT EXISTS public.users
+(
+user_id integer NOT NULL DEFAULT nextval('seq_user_id'::regclass),
+username character varying(50) COLLATE pg_catalog."default" NOT NULL,
+password_hash character varying(200) COLLATE pg_catalog."default" NOT NULL,
+role character varying(50) COLLATE pg_catalog."default" NOT NULL,
+CONSTRAINT pk_user PRIMARY KEY (user_id)
+);
+
+INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
+
+CREATE TABLE IF NOT EXISTS public.day_recipe
+(
+meal_plan_day_day_id bigint NOT NULL,
+recipe_recipe_id bigint NOT NULL,
+header text COLLATE pg_catalog."default"
+);
+
+CREATE TABLE IF NOT EXISTS public.grocery_list
+(
+list_id bigserial NOT NULL,
+owner_id integer NOT NULL,
+CONSTRAINT grocery_list_pkey PRIMARY KEY (list_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.ingredient
+(
+ingredient_id bigserial NOT NULL,
+ingredient_name text COLLATE pg_catalog."default" NOT NULL,
+super_category bigint,
+ingredient_types ingredient_types,
+CONSTRAINT ingredient_pkey PRIMARY KEY (ingredient_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.ingredient_grocery_list
+(
+ingredient_ingredient_id bigint NOT NULL,
+grocery_list_list_id bigint NOT NULL,
+sublist_id bigint NOT NULL,
+amount integer,
+measurement_type measurement_types,
+user_note text COLLATE pg_catalog."default",
+crossed_off boolean NOT NULL DEFAULT false,
+favorite boolean NOT NULL DEFAULT false
+);
+
+CREATE TABLE IF NOT EXISTS public.ingredient_supercategory
+(
+super_id bigserial NOT NULL,
+super_name text COLLATE pg_catalog."default" NOT NULL,
+CONSTRAINT ingredient_supercategory_pkey PRIMARY KEY (super_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.meal_plan
+(
+plan_id bigserial NOT NULL,
+owner_id integer NOT NULL,
+title text COLLATE pg_catalog."default" NOT NULL,
+CONSTRAINT meal_plan_pkey PRIMARY KEY (plan_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.meal_plan_day
+(
+day_id bigserial NOT NULL,
+plan_id bigint NOT NULL,
+day_in_sequence date NOT NULL,
+CONSTRAINT meal_plan_day_pkey PRIMARY KEY (day_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.recipe
+(
+recipe_id bigserial NOT NULL,
+creator_id integer NOT NULL,
+title text COLLATE pg_catalog."default" NOT NULL,
+date_added date NOT NULL,
+cooking_time integer NOT NULL DEFAULT 0,
+prep_time integer NOT NULL DEFAULT 0,
+instructions text COLLATE pg_catalog."default" NOT NULL,
+private boolean,
+picture_links text[] COLLATE pg_catalog."default",
+reference_link text COLLATE pg_catalog."default",
+subheader text COLLATE pg_catalog."default",
+CONSTRAINT recipe_pkey PRIMARY KEY (recipe_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.recipe_ingredient
+(
+recipe_recipe_id bigint NOT NULL,
+ingredient_ingredient_id bigint NOT NULL,
+amount integer,
+measurement measurement_types,
+note text COLLATE pg_catalog."default"
+);
+
+CREATE TABLE IF NOT EXISTS public.recipe_inheritance
+(
+recipe_inheritor bigint NOT NULL,
+inherits_from bigint NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.restrictions
+(
+ingredient_id bigint NOT NULL,
+dairy boolean NOT NULL DEFAULT false,
+egg boolean NOT NULL DEFAULT false,
+tree_nut boolean NOT NULL DEFAULT false,
+peanut boolean NOT NULL DEFAULT false,
+shellfish boolean NOT NULL DEFAULT false,
+wheat boolean NOT NULL DEFAULT false,
+soy boolean NOT NULL DEFAULT false,
+fish boolean NOT NULL DEFAULT false,
+vegan boolean NOT NULL DEFAULT false,
+kosher boolean NOT NULL DEFAULT false,
+vegetarian boolean NOT NULL DEFAULT false,
+CONSTRAINT restrictions_pkey PRIMARY KEY (ingredient_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.reviews
+(
+review_id bigserial NOT NULL,
+recipe_id bigint NOT NULL,
+review_text text COLLATE pg_catalog."default",
+review_score integer NOT NULL,
+alteration_level alteration_level NOT NULL,
+reviewer_id integer NOT NULL,
+CONSTRAINT reviews_pkey PRIMARY KEY (review_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.sub_list_grocery
+(
+ingredient_grocery_list_sublist_id bigint NOT NULL,
+grocery_list_list_id bigint NOT NULL,
+text text COLLATE pg_catalog."default" NOT NULL,
+CONSTRAINT sub_list_grocery_pkey PRIMARY KEY (ingredient_grocery_list_sublist_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.substitutions
+(
+ingredient_id bigint NOT NULL,
+substitution_id bigint NOT NULL,
+ingredient_amount integer,
+ingredient_measurement measurement_types,
+substitute_amount integer,
+substitute_measurement measurement_types,
+instructions text COLLATE pg_catalog."default"
+);
+
+CREATE TABLE IF NOT EXISTS public.tags
+(
+tag_id bigint NOT NULL,
+tag_text text COLLATE pg_catalog."default" NOT NULL,
+CONSTRAINT tags_pkey PRIMARY KEY (tag_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.tags_recipe
+(
+tags_tag_id bigint NOT NULL,
+recipe_recipe_id bigint NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.user_favorites
+(
+users_user_id integer NOT NULL,
+recipe_recipe_id bigint NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.user_pantry
+(
+users_user_id integer NOT NULL,
+ingredient_ingredient_id bigint NOT NULL,
+note text COLLATE pg_catalog."default"
+);
+
+CREATE TABLE IF NOT EXISTS public.users
+(
+user_id integer NOT NULL DEFAULT nextval('seq_user_id'::regclass),
+username character varying(50) COLLATE pg_catalog."default" NOT NULL,
+password_hash character varying(200) COLLATE pg_catalog."default" NOT NULL,
+role character varying(50) COLLATE pg_catalog."default" NOT NULL,
+CONSTRAINT pk_user PRIMARY KEY (user_id)
+);
+
+ALTER TABLE IF EXISTS public.day_recipe
+ADD CONSTRAINT day_recipe_meal_plan_day_day_id_fkey FOREIGN KEY (meal_plan_day_day_id)
+REFERENCES public.meal_plan_day (day_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.day_recipe
+ADD CONSTRAINT day_recipe_recipe_recipe_id_fkey FOREIGN KEY (recipe_recipe_id)
+REFERENCES public.recipe (recipe_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.grocery_list
+ADD CONSTRAINT grocery_list_owner_id_fkey FOREIGN KEY (owner_id)
+REFERENCES public.users (user_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.ingredient
+ADD CONSTRAINT ingredient_super_category_fkey FOREIGN KEY (super_category)
+REFERENCES public.ingredient_supercategory (super_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.ingredient_grocery_list
+ADD CONSTRAINT ingredient_grocery_list_grocery_list_list_id_fkey FOREIGN KEY (grocery_list_list_id)
+REFERENCES public.grocery_list (list_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.ingredient_grocery_list
+ADD CONSTRAINT ingredient_grocery_list_ingredient_ingredient_id_fkey FOREIGN KEY (ingredient_ingredient_id)
+REFERENCES public.ingredient (ingredient_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.ingredient_grocery_list
+ADD CONSTRAINT ingredient_grocery_list_sublist_id_fkey FOREIGN KEY (sublist_id)
+REFERENCES public.sub_list_grocery (ingredient_grocery_list_sublist_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.meal_plan
+ADD CONSTRAINT meal_plan_owner_id_fkey FOREIGN KEY (owner_id)
+REFERENCES public.users (user_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.meal_plan_day
+ADD CONSTRAINT meal_plan_day_plan_id_fkey FOREIGN KEY (plan_id)
+REFERENCES public.meal_plan (plan_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.recipe
+ADD CONSTRAINT recipe_creator_id_fkey FOREIGN KEY (creator_id)
+REFERENCES public.users (user_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.recipe_ingredient
+ADD CONSTRAINT recipe_ingredient_ingredient_ingredient_id_fkey FOREIGN KEY (ingredient_ingredient_id)
+REFERENCES public.ingredient (ingredient_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.recipe_ingredient
+ADD CONSTRAINT recipe_ingredient_recipe_recipe_id_fkey FOREIGN KEY (recipe_recipe_id)
+REFERENCES public.recipe (recipe_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.recipe_inheritance
+ADD CONSTRAINT recipe_inheritance_inherits_from_fkey FOREIGN KEY (inherits_from)
+REFERENCES public.recipe (recipe_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.recipe_inheritance
+ADD CONSTRAINT recipe_inheritance_recipe_inheritor_fkey FOREIGN KEY (recipe_inheritor)
+REFERENCES public.recipe (recipe_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.restrictions
+ADD CONSTRAINT ingredient_id FOREIGN KEY (ingredient_id)
+REFERENCES public.ingredient (ingredient_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE CASCADE
+NOT VALID;
+CREATE INDEX IF NOT EXISTS restrictions_pkey
+ON public.restrictions(ingredient_id);
+
+
+ALTER TABLE IF EXISTS public.reviews
+ADD CONSTRAINT reviews_recipe_id_fkey FOREIGN KEY (recipe_id)
+REFERENCES public.recipe (recipe_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.reviews
+ADD CONSTRAINT reviews_reviewer_id_fkey FOREIGN KEY (reviewer_id)
+REFERENCES public.users (user_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.sub_list_grocery
+ADD CONSTRAINT sub_list_grocery_grocery_list_list_id_fkey FOREIGN KEY (grocery_list_list_id)
+REFERENCES public.grocery_list (list_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.substitutions
+ADD CONSTRAINT substitutions_ingredient_id_fkey FOREIGN KEY (ingredient_id)
+REFERENCES public.ingredient (ingredient_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.substitutions
+ADD CONSTRAINT substitutions_substitution_id_fkey FOREIGN KEY (substitution_id)
+REFERENCES public.ingredient (ingredient_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.tags_recipe
+ADD CONSTRAINT tags_recipe_recipe_recipe_id_fkey FOREIGN KEY (recipe_recipe_id)
+REFERENCES public.recipe (recipe_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.tags_recipe
+ADD CONSTRAINT tags_recipe_tags_tag_id_fkey FOREIGN KEY (tags_tag_id)
+REFERENCES public.tags (tag_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.user_favorites
+ADD CONSTRAINT user_favorites_recipe_recipe_id_fkey FOREIGN KEY (recipe_recipe_id)
+REFERENCES public.recipe (recipe_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.user_favorites
+ADD CONSTRAINT user_favorites_users_user_id_fkey FOREIGN KEY (users_user_id)
+REFERENCES public.users (user_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.user_pantry
+ADD CONSTRAINT user_pantry_ingredient_ingredient_id_fkey FOREIGN KEY (ingredient_ingredient_id)
+REFERENCES public.ingredient (ingredient_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.user_pantry
+ADD CONSTRAINT user_pantry_users_user_id_fkey FOREIGN KEY (users_user_id)
+REFERENCES public.users (user_id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+NOT VALID;
+
+INSERT INTO ingredient (ingredient_id, ingredient_name) VALUES (1, 'PlaceHolder Ingredient');
+
+END;

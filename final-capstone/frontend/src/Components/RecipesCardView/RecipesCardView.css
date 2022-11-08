@@ -1,0 +1,91 @@
+/* .recipe-card-container {
+    margin: 0px auto;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+} */
+
+.recipe-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+    max-width: 800px;
+    margin: 30px auto 30px;
+}
+
+.recipe-card-item {
+    border: 1px solid #eee;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card-info {
+    flex: 1;
+}
+
+.recipe-card-item h3 {
+    color: #555;
+    margin-bottom: 6px;
+    font-size: 1.2em;
+}
+
+.recipe-card-item p {
+    color: #999;
+    font-size: .9em;
+}
+
+.recipe-instructions {
+    color: #555;
+    font-size: 0.7em;
+    margin: 20px 0;
+    line-height: 1.2em;
+}
+
+.recipe-card-buttons {
+    flex: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+button+button {
+    margin-left: 10px;
+}
+
+
+.small-btn {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 60px;
+}
+
+.small-btn:hover {
+    background-color: #f7fafa;
+}
+
+.small-btn:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+}

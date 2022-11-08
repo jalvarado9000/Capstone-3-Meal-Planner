@@ -1,0 +1,164 @@
+.recipeform {
+    border: 1px solid #eee;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    max-width: 660px;
+    margin: 80px auto;
+    border-radius: 4px;
+}
+
+.recipeform-section {
+    padding: 14px 0 21px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.recipeform-row {
+    margin-top: 15px;
+}
+
+.recipeform input,
+textarea {
+    background: rgb(250, 250, 250);
+    width: 100%;
+    height: 45px;
+    border: 1px solid rgb(234, 234, 234);
+    padding: 10px 12px;
+    color: rgb(68, 68, 68);
+    font-size: 14px;
+    font-style: italic;
+    border-radius: 1px;
+}
+
+textarea {
+    height: 160px;
+}
+
+.recipeform-row fieldset {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#recipeform-time-row {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#recipeform-time-row legend {
+    width: 120px;
+    margin: 0px 0px;
+    font-size: 100%;
+}
+
+.time {
+    max-width: 33.3%;
+    margin-left: 10px;
+}
+
+.row-with-span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.row-with-span span {
+    width: 80px;
+    margin-right: 20px;
+}
+
+.add-ingredient-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #909090;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.recipeform-ingredient-list {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 8px;
+    font-size: 12px;
+    font-family: inherit;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recipeform-ingredient-list li {
+    color: rgb(158, 150, 150);
+    /* list-style: none; */
+}
+
+.ingredient-section {
+    padding-bottom: 0px;
+}
+
+.bottom-form-buttons {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-form-buttons .med-btn {
+    width: 120px;
+    color: #555;
+    background: rgb(250, 250, 250);
+    font-size: 0.9em;
+    width: 120px;
+    padding: 8px;
+    border-radius: 2px;
+    border: 1px solid rgb(234, 234, 234);
+}
+
+.med-btn:hover,
+.med-btn:focus {
+    opacity: .75;
+}
+
+.bottom-form-buttons #btn-2 {
+    margin-left: 40px;
+}
+
+
+@media only screen and (max-width: 500px) {}
+
+
+@media only screen and (min-width: 768px) {
+    .recipeform {
+        padding: 28px;
+        box-shadow: 0 1px 5px 1px #eaeaea;
+    }
+
+    fieldset {
+        max-width: 290px;
+    }
+}
+
+/* Drew's CSS */
+
+.recipe-box {
+    position: relative;
+}
+.recipe-container {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.recipe-form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
